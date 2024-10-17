@@ -1,15 +1,10 @@
-
-import { RootStackParamList } from '@/app/(tabs)/types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
-type LoginScreenNavigationProp = NativeStackNavigationProp<  RootStackParamList,  'LoginApp'>;
 
-const loginApp: React.FC = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+
+const LoginApwqwp: React.FC = () => {
+
   return (
     <View style={styles.container}>
  
@@ -43,11 +38,7 @@ const loginApp: React.FC = () => {
 
 
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginButton} onPress={() => 
-          {
-            console.log (' going to home page')
-
-            navigation.navigate('Home')}}>
+      <TouchableOpacity style={styles.loginButton} >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
@@ -150,8 +141,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default loginApp;
+export default LoginApwqwp;
 
-export type RootStackParamList={
-  LoginApp: undefined,
-}

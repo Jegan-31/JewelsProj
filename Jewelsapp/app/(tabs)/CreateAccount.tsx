@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity, TouchableHighlight,ScrollView, Linking } from 'react-native';
 
-const App: React.FC = () => {
+const NewuserApp: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -171,4 +171,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default NewuserApp;

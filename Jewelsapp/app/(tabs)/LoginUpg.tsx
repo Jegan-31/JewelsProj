@@ -1,34 +1,28 @@
 
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, ScrollView } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { View, Text, TextInput, TouchableOpacity, Image, ScrollView, StyleSheet } from 'react-native';
 
 const App: React.FC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.card}>
-        <View style={styles.imageContainer}>
-            <Image
-              source={{ uri: 'https://www.jcsjewellers.com/cdn/shop/files/WEB_1_2000x.jpg?v=1686119679' }}
-              style={styles.image}
-            />
-                 {/* <Image source={{ uri: 'https://www.jcsjewellers.com/cdn/shop/t/2/assets/logo.png' }} style={styles.logo} /> */}
-
-        </View>
+        <Image
+          source={{ uri: 'https://placehold.co/400x200' }}
+          style={styles.image}
+          resizeMode="cover"
+        />
         <View style={styles.content}>
           <Text style={styles.title}>Login</Text>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Username / Mobile No</Text>
             <View style={styles.inputWrapper}>
               <TextInput style={styles.input} />
-              <FontAwesome name="user" style={styles.icon} />
             </View>
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Password</Text>
             <View style={styles.inputWrapper}>
               <TextInput style={styles.input} secureTextEntry />
-              <FontAwesome name="eye-slash" style={styles.icon} />
             </View>
           </View>
           <TouchableOpacity style={styles.forgotPassword}>
@@ -37,10 +31,28 @@ const App: React.FC = () => {
           <TouchableOpacity style={styles.loginButton}>
             <Text style={styles.loginButtonText}>Login</Text>
           </TouchableOpacity>
-          <View style={styles.registerContainer}>
-            <Text style={styles.registerText}>Don't have an account? <Text style={styles.registerLink}>Register</Text></Text>
-          </View>
         </View>
+      </View>
+      <View style={styles.registerContainer}>
+        <Text style={styles.registerText}>
+          Don’t have an account? <Text style={styles.registerLink}>Register</Text>
+        </Text>
+      </View>
+      <View style={styles.card}>
+        <Image
+          source={{ uri: 'https://placehold.co/400x200' }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+  
+      </View>
+      <View style={styles.card}>
+        <Image
+          source={{ uri: 'https://placehold.co/400x200' }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+ 
       </View>
     </ScrollView>
   );
@@ -48,94 +60,100 @@ const App: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f3f4f6',
+    paddingVertical: 20,
   },
   card: {
-    backgroundColor: 'white',
+    width: '98%',
+    backgroundColor: '#fff',
     borderRadius: 10,
     overflow: 'hidden',
-    width: 320,
+    marginBottom: 20,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 5,
-  },
-  imageContainer: {
-    position: 'relative',
-    resizeMode:'contain'
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 5 },
   },
   image: {
     width: '100%',
-    height: 180,
-  },
-  logo: {
-    position: 'absolute',
-    top: 16,
-    left: 16,
-    width: 100,
-    height: 50,
+    height: 200,
   },
   content: {
-    padding: 16,
+    padding: 20,
   },
   title: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 16,
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: 20,
   },
   inputContainer: {
-    marginBottom: 16,
+    marginBottom: 15,
   },
   label: {
-    color: '#4a4a4a',
-    marginBottom: 4,
+    color: '#4b5563',
+    marginBottom: 5,
   },
   inputWrapper: {
-    position: 'relative',
-  },
-  input: {
-    width: '100%',
-    padding: 12,
     borderWidth: 1,
     borderColor: '#d1d5db',
-    borderRadius: 8,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
-  icon: {
-    position: 'absolute',
-    right: 12,
-    top: 12,
-    color: '#9ca3af',
+  input: {
+    height: 40,
   },
   forgotPassword: {
     alignItems: 'flex-end',
-    marginBottom: 16,
+    marginBottom: 20,
   },
   forgotPasswordText: {
-    color: '#3b82f6',
+    color: '#2563eb',
   },
   loginButton: {
     backgroundColor: '#1e3a8a',
-    paddingVertical: 12,
-    borderRadius: 8,
+    paddingVertical: 10,
+    borderRadius: 5,
     alignItems: 'center',
   },
   loginButtonText: {
-    color: 'white',
-    fontWeight: '600',
+    color: '#fff',
+    fontWeight: 'bold',
   },
   registerContainer: {
-    marginTop: 16,
-    alignItems: 'center',
+    marginBottom: 20,
   },
   registerText: {
-    color: '#4a4a4a',
+    color: '#4b5563',
   },
   registerLink: {
-    color: '#3b82f6',
+    color: '#2563eb',
+  },
+  collectionLabel: {
+    color: '#6b7280',
+    fontSize: 12,
+  },
+  collectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginVertical: 5,
+  },
+  collectionDescription: {
+    color: '#6b7280',
+    marginBottom: 10,
+  },
+  buyButton: {
+    backgroundColor: '#1e3a8a',
+    paddingVertical: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buyButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 

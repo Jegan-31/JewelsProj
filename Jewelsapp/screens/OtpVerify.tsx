@@ -6,9 +6,10 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  Image
 } from 'react-native';
 
-const App: React.FC = () => {
+    const Otpver = ({navigation}) => {
   const [code, setCode] = useState(['', '', '', '', '', '']);
 
   const handlePress = (key: string) => {
@@ -39,7 +40,7 @@ const App: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-      {/* <Image source={{ uri: 'https://www.jcsjewellers.com/cdn/shop/t/2/assets/logo.png' }} style={styles.logo} /> */}
+       <Image source={{ uri: 'https://www.jcsjewellers.com/cdn/shop/t/2/assets/logo.png' }} style={styles.logo} /> 
       </View>
       <Text style={styles.verificationText}>Verification</Text>
       <Text style={styles.instructionText}>
@@ -60,7 +61,8 @@ const App: React.FC = () => {
       <TouchableOpacity style={styles.deleteButton} onPress={handleDelete}>
         <Text style={styles.deleteButtonText}>Delete</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.verifyButton} onPress={handleVerify}>
+      <TouchableOpacity  style={styles.verifyButton}  onPress={() => { handleVerify(); navigation.navigate("Congrats");}}
+>
         <Text style={styles.verifyButtonText}>Verify</Text>
       </TouchableOpacity>
     </View>
@@ -69,7 +71,7 @@ const App: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFBEB',
+    backgroundColor: '#fcfcfc',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -127,8 +129,9 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   logo:{
-      resizeMode:'contain'
+      resizeMode:'contain',height: 100,
+      width: 100,
   },
 });
 
-export default App;
+export default Otpver;

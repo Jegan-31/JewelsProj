@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import Login from '@/screens/Login';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -70,112 +71,48 @@ const mainpageApp = () => {
         </View>
       </View>
     </ScrollView>
+=======
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
+import Homescreen from "@/screens/Home";
+import LoginApp from "@/screens/Login";
+import Forgot from "@/screens/ForgotPassword";
+import Newuser from "@/screens/CreateAccount";
+import Resetpass from "@/screens/ResetPass";
+import LandingScreen from "@/screens/Landing";
+import Otpver from "@/screens/OtpVerify";
+import Success from "@/screens/Congrats";
+import Joinsch from "@/screens/PlanDetails";
+import Prodet from "@/screens/ProfileDetails";
+import Paynow from "@/screens/PayNow";
+
+const Stack = createNativeStackNavigator();
+
+const MainpageApp: React.FC = () => {
+  return (
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen  name="Home"  component={Homescreen}  />
+        <Stack.Screen name="CreateAccount" component={Newuser} options={{ headerShown: false }} />
+        <Stack.Screen name="LoginApp" component={LoginApp} />
+        <Stack.Screen name="Forgot" component={Forgot} options={{ headerShown: false }} />
+        <Stack.Screen name="Resetpass" component={Resetpass}  options={{ headerShown: false }}/>
+        <Stack.Screen name="LandingScreen" component={LandingScreen}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Otpver" component={Otpver} options={{ headerShown: false }} />
+        <Stack.Screen name="Congrats" component={Success}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Joinsch" component={Joinsch}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Prodet" component={Prodet}  options={{ headerShown: false }}/> 
+        <Stack.Screen name="Paynow" component={Paynow}  options={{ headerShown: false }}/> 
+       
+      </Stack.Navigator>
+    </NavigationContainer>
+
+    
+>>>>>>> Stashed changes
   );
 };
 
 
-const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-    alignItems: 'center',
-    backgroundColor: '#fdf6d8',
-    padding: 16,
-  },
-  screen:{
-    flex: 1,
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  logo: { 
-    resizeMode: "contain",
-     height:100,
-      width:100
-    },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1a3d7c',
-  },
-  subtitle: {
-    fontSize: 16,
-    color: '#1a3d7c',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    marginBottom: 16,
-  },
-  loginButton: {
-    backgroundColor: '#1a3d7c',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-    marginRight: 8,
-  },
-  loginButtonText: {
-    color: '#fff',
-  },
-  signupButton: {
-    borderColor: '#1a3d7c',
-    borderWidth: 1,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-  },
-  signupButtonText: {
-    color: '#1a3d7c',
-  },
-  skipText: {
-    color: '#1a3d7c',
-    marginBottom: 16,
-  },
-  cardContainer: {
-    width: '100%',
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 5,
-    marginBottom: 16,
-    overflow: 'hidden',
-  },
-  cardImage: {
-    width: '100%',
-    height: 220,
-    resizeMode:'contain'
-  },
-  cardContent: {
-    padding: 16,
-  },
-  cardSubtitle: {
-    fontSize: 12,
-    color: '#888',
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  cardDescription: {
-    color: '#666',
-  },
-  buyButton: {
-    backgroundColor: '#1a3d7c',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 4,
-    marginTop: 8,
-  },
-  buyButtonYellow: {
-    backgroundColor: '#fbbf24',
-  },
-  buyButtonText: {
-    color: '#fff',
-  },
-});
 
-export default mainpageApp;
+export default MainpageApp;

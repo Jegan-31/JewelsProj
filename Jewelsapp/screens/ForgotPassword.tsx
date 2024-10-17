@@ -3,12 +3,14 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-const ForgotPasswordScreen: React.FC = () => {
+const Forgot = ({navigation}) => {
+  
+  
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity>
-          <FontAwesome name="arrow-left" size={24} color="#1A1A1A" />
+          {/* <FontAwesome name="arrow-left" size={24} color="#1A1A1A" /> */}
         </TouchableOpacity>
       </View>
       <View style={styles.logoContainer}>
@@ -29,7 +31,7 @@ const ForgotPasswordScreen: React.FC = () => {
         />
         <FontAwesome name="check-circle" size={24} color="#1A1A1A" style={styles.icon} />
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Otpver")}>
         <Text style={styles.buttonText}>Send Email</Text>
       </TouchableOpacity>
     </View>
@@ -39,7 +41,7 @@ const ForgotPasswordScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF9DB',
+    backgroundColor: '#fcfcfc',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
@@ -110,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ForgotPasswordScreen;
+export default Forgot;

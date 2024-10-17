@@ -1,15 +1,9 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import { RootStackParamList } from '../app/(tabs)/types';
-import { useNavigation } from 'expo-router';
 
-type LoginScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Login'
->;
-const loginApp: React.FC = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
+
+const LoginApp = ({navigation}) => {
+  
   console.log("from login app")
   return (
     <View style={styles.container}>
@@ -34,15 +28,16 @@ const loginApp: React.FC = () => {
           <Text><i className="fa-sharp fa-light fa-eye"></i></Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.forgotPassword}>
+      <TouchableOpacity style={styles.forgotPassword} onPress={()=>navigation.navigate("Forgot")}>
         <Text style={styles.forgotPasswordText}>Forgot password ?</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={()=>navigation.navigate("LandingScreen")}>
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
       <View style={styles.registerContainer}>
-        <Text style={styles.registerText}>Don't have an account? <Text style={styles.registerLink}>Register</Text></Text>
+        <Text style={styles.registerText}>Don't have an account? 
+          <Text onPress={()=>navigation.navigate("CreateAccount")} style={styles.registerLink}>Register </Text></Text>
       </View>
     </View>
   );
@@ -51,7 +46,7 @@ const loginApp: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fdf6d8',
+    backgroundColor: '#fcfcfc',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
     top: 10,
   },
   forgotPassword: {
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     marginRight: 30,
     marginBottom: 20,
   },
@@ -141,4 +136,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default loginApp;
+export default LoginApp;

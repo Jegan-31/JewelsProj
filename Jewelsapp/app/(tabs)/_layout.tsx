@@ -9,12 +9,14 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
+    
     <Tabs
       screenOptions={{
         tabBarStyle: { display: 'none' }
       }}>
       {/* <Tabs.Screen
         name="index"
+      
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
-const RecoveryPasswordScreen: React.FC = () => {
+const Resetpass = ({navigation}) => {
   const [code, setCode] = useState<string[]>(['', '', '', '', '', '']);
   const [newPassword, setNewPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
@@ -83,7 +83,7 @@ const RecoveryPasswordScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF9E5',
+    backgroundColor: '#fcfcfc',
     padding: 20,
     alignItems: 'center',
   },
@@ -162,4 +162,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecoveryPasswordScreen;
+export default Resetpass;

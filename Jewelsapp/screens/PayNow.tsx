@@ -2,7 +2,8 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, ScrollView } from 'react-native';
 
-const App: React.FC = () => {
+const Paynow = ({navigation}) => {
+  console.log('paynow page ???')
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -88,7 +89,7 @@ const App: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#fdfbe5',
+    backgroundColor: '#fcfcfc',
     padding: 16,
   },
   header: {
@@ -216,4 +217,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Paynow;

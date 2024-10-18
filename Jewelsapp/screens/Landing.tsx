@@ -2,9 +2,10 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 
-const App: React.FC = () => (
+const LandingScreen = ({navigation}) => {
+  return(
     <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
             <FontAwesome name="bars" size={24} color="black" />
@@ -39,7 +40,7 @@ const App: React.FC = () => (
             </View>
         </View>
         <View style={styles.gridContainer}>
-            <TouchableOpacity style={styles.gridItem}>
+            <TouchableOpacity style={styles.gridItem} onPress={()=>navigation.navigate("Joinsch")}>
                 <FontAwesome name="random" size={24} color="white" />
                 <Text style={styles.gridText}>Join Scheme</Text>
             </TouchableOpacity>
@@ -52,7 +53,7 @@ const App: React.FC = () => (
                 <Text style={styles.gridText}>Brochure</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.gridItem}>
-                <FontAwesome name="user-md" size={24} color="white" />
+                <FontAwesome name="user-md" size={24} color="white" onPress={()=>navigation.navigate("Prodet")} />
                 <Text style={styles.gridText}>My Profile</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.gridItem}>
@@ -76,19 +77,20 @@ const App: React.FC = () => (
             </View>
         </View>
     </ScrollView>
-);
+    );
+};
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#F3F4F6',
+    backgroundColor: '#fcfcfc',
     padding: 16,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#FFFBEB',
+    backgroundColor: '#fcfcfc',
     padding: 16,
     borderRadius: 8,
   },
@@ -204,4 +206,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default LandingScreen;

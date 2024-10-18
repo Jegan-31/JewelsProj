@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 
-const App: React.FC = () => {
+const Prodet = ({navigation}) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
@@ -89,7 +89,7 @@ const App: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: '#fff9db',
+    backgroundColor: '#fcfcfc',
     alignItems: 'center',
   },
   header: {
@@ -183,4 +183,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Prodet;
